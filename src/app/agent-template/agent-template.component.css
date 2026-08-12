@@ -1,0 +1,825 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      #e8f0ff 0,
+      transparent 35%
+    ),
+    #f5f7fb;
+
+  padding: 35px 25px;
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  color: #1f2937;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+  max-width: 1450px;
+  margin: auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+  margin-bottom: 25px;
+}
+
+.title-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: white;
+
+  font-weight: 800;
+  font-size: 17px;
+
+  box-shadow:
+    0 8px 20px
+    rgba(37, 99, 235, 0.25);
+}
+
+.header h1 {
+  margin: 0;
+
+  font-size: 30px;
+  font-weight: 750;
+
+  letter-spacing: -0.5px;
+}
+
+.header p {
+  margin: 4px 0 0;
+
+  color: #6b7280;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   WORKSPACE
+========================================= */
+
+.workspace {
+  display: grid;
+
+  grid-template-columns:
+    minmax(450px, 1fr)
+    minmax(450px, 1fr);
+
+  gap: 25px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.form-card,
+.result-card {
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border:
+    1px solid
+    rgba(229, 231, 235, 0.9);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 35px
+    rgba(15, 23, 42, 0.07);
+
+}
+
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.form-card {
+  padding: 28px;
+}
+
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.card-header {
+  margin-bottom: 25px;
+
+  padding-bottom: 18px;
+
+  border-bottom:
+    1px solid #eef0f4;
+}
+
+.card-header h2 {
+  margin: 0;
+
+  font-size: 20px;
+
+  color: #111827;
+}
+
+.card-header p {
+  margin: 5px 0 0;
+
+  font-size: 13px;
+
+  color: #9ca3af;
+}
+
+
+/* =========================================
+   FIELDS
+========================================= */
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+  color: #374151;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.field input,
+.field textarea,
+.field select {
+
+  width: 100%;
+
+  padding:
+    11px 13px;
+
+  border:
+    1px solid #dfe3e8;
+
+  border-radius: 9px;
+
+  background: #fafbfc;
+
+  color: #111827;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition:
+    0.2s ease;
+}
+
+
+.field input {
+
+  height: 43px;
+}
+
+
+.field textarea {
+
+  min-height: 82px;
+
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   FOCUS
+========================================= */
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+
+  outline: none;
+
+  background: white;
+
+  border-color: #3b82f6;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(59, 130, 246, 0.10);
+}
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
+
+::placeholder {
+  color: #a7adb7;
+}
+
+
+/* =========================================
+   CSR
+========================================= */
+
+.csr-field {
+
+  padding: 13px;
+
+  background: #f0f7ff;
+
+  border-radius: 10px;
+
+  border:
+    1px solid #dbeafe;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.buttons {
+
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+
+.buttons button,
+.copy-result-button {
+
+  border: none;
+
+  border-radius: 9px;
+
+  padding:
+    11px 18px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
+}
+
+
+.buttons button:hover,
+.copy-result-button:hover {
+
+  transform:
+    translateY(-1px);
+}
+
+
+.generate-button {
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: white;
+
+  box-shadow:
+    0 5px 12px
+    rgba(37, 99, 235, 0.20);
+}
+
+
+.copy-button {
+
+  background: #16a34a;
+
+  color: white;
+}
+
+
+.clear-button {
+
+  background: #f1f3f5;
+
+  color: #4b5563;
+}
+
+
+.clear-button:hover {
+
+  background: #e5e7eb;
+}
+
+
+/* =========================================
+   SIGNATURE
+========================================= */
+
+.signature {
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 25px;
+
+  padding-top: 16px;
+
+  border-top:
+    1px solid #eef0f4;
+
+  font-size: 12px;
+
+  color: #9ca3af;
+}
+
+
+.signature strong {
+
+  color: #374151;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   RESULT CARD
+========================================= */
+
+.result-card {
+
+  padding: 28px;
+
+  position: sticky;
+
+  top: 25px;
+}
+
+
+/* =========================================
+   RESULT HEADER
+========================================= */
+
+.result-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+
+  padding-bottom: 18px;
+
+  border-bottom:
+    1px solid #eef0f4;
+}
+
+
+.result-header h2 {
+
+  margin: 0;
+
+  font-size: 20px;
+
+  color: #111827;
+}
+
+
+.result-header p {
+
+  margin: 5px 0 0;
+
+  color: #9ca3af;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+
+  padding:
+    5px 10px;
+
+  border-radius: 20px;
+
+  background: #dcfce7;
+
+  color: #15803d;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   EMPTY RESULT
+========================================= */
+
+.empty-result {
+
+  height: 560px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: #9ca3af;
+}
+
+
+.empty-icon {
+
+  width: 65px;
+
+  height: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f1f5f9;
+
+  font-size: 28px;
+
+  margin-bottom: 15px;
+}
+
+
+.empty-result h3 {
+
+  margin: 0 0 7px;
+
+  color: #4b5563;
+
+  font-size: 16px;
+}
+
+
+.empty-result p {
+
+  margin: 0;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   RESULT TEXT
+========================================= */
+
+.result-text {
+
+  width: 100%;
+
+  height: 560px;
+
+  padding: 20px;
+
+  border:
+    1px solid #dfe3e8;
+
+  border-radius: 10px;
+
+  background: #fafbfc;
+
+  color: #1f2937;
+
+  font-family:
+    "Consolas",
+    "Courier New",
+    monospace;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  resize: none;
+
+  overflow-y: scroll;
+
+  white-space: pre-wrap;
+
+  word-wrap: break-word;
+
+  outline: none;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.result-text::-webkit-scrollbar {
+
+  width: 9px;
+}
+
+
+.result-text::-webkit-scrollbar-track {
+
+  background: #f1f3f5;
+
+  border-radius: 10px;
+}
+
+
+.result-text::-webkit-scrollbar-thumb {
+
+  background: #c5cad3;
+
+  border-radius: 10px;
+}
+
+
+.result-text::-webkit-scrollbar-thumb:hover {
+
+  background: #9ca3af;
+}
+
+
+/* =========================================
+   COPY RESULT
+========================================= */
+
+.copy-result-button {
+
+  margin-top: 12px;
+
+  width: 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #16a34a,
+      #15803d
+    );
+
+  color: white;
+
+  box-shadow:
+    0 5px 12px
+    rgba(22, 163, 74, 0.18);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+  text-align: center;
+
+  margin-top: 25px;
+
+  color: #a1a7b0;
+
+  font-size: 11px;
+}
+
+.footer span {
+
+  margin:
+    0 7px;
+
+  color: #d1d5db;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .workspace {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .result-card {
+
+    position: static;
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .page {
+
+    padding:
+      20px 12px;
+  }
+
+  .form-card,
+  .result-card {
+
+    padding: 20px;
+  }
+
+  .buttons {
+
+    flex-direction: column;
+  }
+
+  .buttons button {
+
+    width: 100%;
+  }
+
+  .result-text {
+
+    height: 450px;
+  }
+
+  .empty-result {
+
+    height: 450px;
+  }
+
+}
+
+.signature strong {
+  color: #374151;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================================
+   DEPOT WARNING
+========================================= */
+
+.warning-text {
+  margin-top: 10px;
+  margin-left: 32px;
+
+  color: #dc2626;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  line-height: 1.4;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+
+}
+
+
+/* =========================================
+   COMPANY LOGOS
+========================================= */
+
+.company-logos {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 8px 14px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(15, 23, 42, 0.06);
+
+}
+
+
+/* Individual logos */
+
+.company-logo {
+
+  width: 70px;
+
+  height: 45px;
+
+  object-fit: contain;
+
+  display: block;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+/* Hover */
+
+.company-logo:hover {
+
+  transform: scale(1.08);
+
+  opacity: 0.9;
+}

@@ -1,0 +1,270 @@
+<div class="page">
+
+  <div class="container">
+
+        <div class="header">
+
+        <div class="title-area">
+
+            <div class="icon">
+            AT
+            </div>
+
+            <div>
+            <h1>Agent Template</h1>
+            <p>Professional report generator</p>
+            </div>
+
+        </div>
+
+        <div class="company-logos">
+
+            <img
+            src="assets/Can.png"
+            alt="Can logo"
+            class="company-logo">
+
+            <img
+            src="assets/HP.png"
+            alt="HP logo"
+            class="company-logo">
+
+        </div>
+
+        </div>
+
+
+    <div class="workspace">
+
+      <div class="form-card">
+
+
+        <div class="field">
+
+          <label>Customer</label>
+
+          <input
+            type="text"
+            [(ngModel)]="customer"
+            placeholder="Enter customer name">
+
+        </div>
+
+        <div class="field">
+
+          <label>IT from</label>
+
+          <input
+            type="text"
+            [(ngModel)]="itFrom"
+            placeholder="Enter IT information">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Reported</label>
+
+          <textarea
+            [(ngModel)]="reported"
+            placeholder="Describe what was reported">
+          </textarea>
+
+        </div>
+
+        <div class="field">
+
+          <label>Customer reported that</label>
+
+          <textarea
+            [(ngModel)]="customerReported"
+            placeholder="Describe the customer's report">
+          </textarea>
+
+        </div>
+
+        <div class="field">
+
+          <label>The current state of the machine</label>
+
+          <textarea
+            [(ngModel)]="currentState"
+            placeholder="Describe the current machine state">
+          </textarea>
+
+        </div>
+
+        <div class="field">
+
+          <label>Test performed</label>
+
+          <textarea
+            [(ngModel)]="testPerformed"
+            placeholder="Describe the tests performed">
+          </textarea>
+
+        </div>
+
+        <div class="field">
+
+          <label>List of damaged parts</label>
+
+          <textarea
+            [(ngModel)]="damagedParts"
+            placeholder="List the damaged parts">
+          </textarea>
+
+        </div>
+
+        <div class="field">
+
+          <label>I set up</label>
+
+          <select [(ngModel)]="repairType">
+
+            <option value="">
+              Select repair type
+            </option>
+
+            <option value="An onsite repair">
+              An onsite repair
+            </option>
+
+            <option value="An offsite repair">
+              A depot repair
+            </option>
+
+            <option value="A CSR">
+              A CSR
+            </option>
+
+          </select>
+
+        </div>
+
+
+<div
+  class="depot-option"
+  [hidden]="repairType !== 'An offsite repair'">
+
+  <label class="checkbox-container">
+
+    <input
+      type="checkbox"
+      [(ngModel)]="depotRepairConfirmed">
+
+    <span class="checkmark"></span>
+
+    <div>
+
+      <span class="checkbox-text">
+        Even if the warranty allows customers an onsite intervention,
+        Customer opted for a depot repair to perform diagnosis and repair
+        all defective parts!
+      </span>
+
+      <div class="warning-text">
+        ⚠ If Customer wants Offsite while he has Onsite!
+      </div>
+
+    </div>
+
+  </label>
+
+</div>
+
+
+<!-- CSR -->
+
+<div
+  class="field csr-field"
+  [hidden]="repairType !== 'A CSR'">
+
+  <label>Part sended</label>
+
+  <input
+    type="text"
+    [(ngModel)]="partSended"
+    placeholder="Enter the part sent">
+
+</div>
+
+        <div class="buttons">
+
+          <button
+            type="button"
+            class="generate-button"
+            (click)="generateTemplate()">
+
+            <span>⚡</span>
+            Generate
+
+          </button>
+
+
+          <button
+            type="button"
+            class="copy-button"
+            [hidden]="generatedText === ''"
+            (click)="copyTemplate()">
+
+            <span>📋</span>
+            Copy
+
+          </button>
+
+
+          <button
+            type="button"
+            class="clear-button"
+            (click)="clearForm()">
+
+            <span>↺</span>
+            Clear
+
+          </button>
+
+        </div>
+
+            <div class="signature">
+            <span>Created by</span>
+            <strong> Mohamed Wassim Ennar 🔥</strong>
+            </div>
+
+      </div>
+
+      <div class="result-card">
+
+        <textarea
+          class="result-text"
+          [value]="generatedText"
+          [hidden]="generatedText === ''"
+          readonly>
+        </textarea>
+
+        <button
+          type="button"
+          class="copy-result-button"
+          [hidden]="generatedText === ''"
+          (click)="copyTemplate()">
+
+          📋 Copy Template
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="footer">
+
+      Agent Template
+      <span>•</span>
+      Personal tool
+
+    </div>
+
+  </div>
+
+</div>
