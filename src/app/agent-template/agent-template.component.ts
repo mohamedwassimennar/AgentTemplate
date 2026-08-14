@@ -9,6 +9,7 @@ export class AgentTemplateComponent {
 
   customer: string = '';
   itFrom: string = '';
+  entitlement: string = '';
   reported: string = '';
   customerReported: string = '';
   currentState: string = '';
@@ -27,6 +28,13 @@ export class AgentTemplateComponent {
 
     const sections: string[] = [];
 
+    if (this.entitlement.trim() !== '') {
+
+      sections.push(
+        `Entitlement: ${this.entitlement.trim()}`
+      );
+
+    }
 
     if (this.customer.trim() !== '') {
 
@@ -36,6 +44,7 @@ export class AgentTemplateComponent {
 
     }
 
+
     if (this.itFrom.trim() !== '') {
 
       sections.push(
@@ -43,6 +52,8 @@ export class AgentTemplateComponent {
       );
 
     }
+
+
 
     if (this.reported.trim() !== '') {
 
@@ -151,7 +162,10 @@ export class AgentTemplateComponent {
 
   }
 
+
   clearForm(): void {
+
+    this.entitlement = '';
 
     this.customer = '';
 
